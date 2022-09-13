@@ -1,0 +1,214 @@
+#include "dns_query.h"
+#include <ares.h>
+
+#ifdef _WIN32
+
+#else
+#include <string.h>
+
+#endif
+
+namespace dns
+{
+    std::ostream &operator<<(std::ostream &os, const Error &error)
+    {
+        os << error.Code() << " " << error.Message();
+        return os;
+    }
+
+    Error::Error(int code)
+        : code_(code)
+    {
+    }
+
+    Error::~Error()
+    {
+    }
+
+    int Error::Code() const
+    {
+        return code_;
+    }
+
+    std::string_view Error::Message() const
+    {
+        return ares_strerror(code_);
+    }
+
+    Error::operator bool() const
+    {
+        return code_ != ARES_SUCCESS;
+    }
+
+    int Error::Code()
+    {
+        return const_cast<const Error &>(*this).Code();
+    }
+
+    std::string_view Error::Message()
+    {
+        return const_cast<const Error &>(*this).Message();
+    }
+
+    Error::operator bool()
+    {
+        return const_cast<const Error &>(*this);
+    }
+
+    Record::Record(const std::string_view &domain, hostent *host)
+        : hostent_ptr_(host),
+          name_(domain)
+    {
+    }
+
+    Record::~Record()
+    {
+    }
+
+    std::string_view Record::Name()
+    {
+        return const_cast<const Record &>(*this).Name();
+    }
+
+    std::vector<std::string> Record::AddrList()
+    {
+        return const_cast<const Record &>(*this).AddrList();
+    }
+
+    hostent *Record::Raw()
+    {
+        return hostent_ptr_;
+    }
+
+    size_t Record::AddrLength()
+    {
+        return const_cast<const Record &>(*this).AddrLength();
+    }
+
+    size_t Record::AddrLength() const
+    {
+        return hostent_ptr_->h_length;
+    }
+
+    const hostent *Record::Raw() const
+    {
+        return hostent_ptr_;
+    }
+
+    std::string_view Record::Name() const
+    {
+        return name_;
+    }
+
+    std::vector<std::string> Record::AddrList() const
+    {
+        std::vector<std::string> addr_list;
+        char buf[46];
+        for (char **p = hostent_ptr_->h_addr_list; *p; p++)
+        {
+            buf[0] = '?';
+            buf[1] = '0';
+            ares_inet_ntop(hostent_ptr_->h_addrtype, *p, buf, sizeof(buf));
+            addr_list.emplace_back(buf);
+        }
+        return addr_list;
+    }
+
+    DNSQuery::DNSQuery()
+        : domain_list_()
+    {
+    }
+
+    DNSQuery::~DNSQuery()
+    {
+    }
+
+    void DNSQuery::Add(const std::string_view &domain)
+    {
+        domain_list_.emplace_back(domain);
+    }
+
+    class Ares
+    {
+    public:
+        static void Callback(void *arg, int status, int timeouts, struct hostent *host)
+        {
+            const std::string &domain = *reinterpret_cast<std::string *>(arg);
+            Instance().callback_(Record{domain, host}, status);
+        }
+
+        static void SetCallback(const DNSQuery::Callback &callback)
+        {
+            Instance().callback_ = callback;
+        }
+
+        static void SetDomainList(std::vector<std::string> &domain_list)
+        {
+            Instance().domain_list_ptr_ = &domain_list;
+        }
+
+        static Error Start()
+        {
+            struct ares_options options;
+            int optmask = 0;
+            int status, nfds, c, addr_family = AF_INET;
+            fd_set read_fds, write_fds;
+            struct timeval *tvp, tv;
+            struct in_addr addr4;
+            memset(&options, 0, sizeof(options));
+            status = ares_library_init(ARES_LIB_INIT_ALL);
+            if (status != ARES_SUCCESS)
+                return status;
+            status = ares_init_options(&Instance().channel_, &options, optmask);
+            if (status != ARES_SUCCESS)
+                return status;
+            for (auto &domain : *(Instance().domain_list_ptr_))
+            {
+                ares_gethostbyname(Instance().channel_, domain.c_str(), addr_family, Ares::Callback, &domain);
+            }
+            for (;;)
+            {
+                int res;
+                FD_ZERO(&read_fds);
+                FD_ZERO(&write_fds);
+                nfds = ares_fds(Instance().channel_, &read_fds, &write_fds);
+                if (nfds == 0)
+                    break;
+                tvp = ares_timeout(Instance().channel_, NULL, &tv);
+                res = select(nfds, &read_fds, &write_fds, NULL, tvp);
+                if (-1 == res)
+                    break;
+                ares_process(Instance().channel_, &read_fds, &write_fds);
+            }
+            ares_destroy(Instance().channel_);
+            ares_library_cleanup();
+            return status;
+        }
+        ~Ares() {}
+
+    protected:
+        static Ares &Instance()
+        {
+            static Ares ares;
+            return ares;
+        }
+
+        Ares() : callback_(),
+                 domain_list_ptr_(nullptr),
+                 index_(0)
+        {
+        }
+
+        DNSQuery::Callback callback_;
+        std::vector<std::string> *domain_list_ptr_;
+        size_t index_;
+        ares_channel channel_;
+    };
+
+    Error DNSQuery::Start(const Callback &callback)
+    {
+        Ares::SetCallback(callback);
+        Ares::SetDomainList(domain_list_);
+        return Ares::Start();
+    }
+}

@@ -1,0 +1,367 @@
+[
+{
+  "directory": "/mnt/d/github.com/dns_query/build",
+  "command": "/usr/bin/clang++-11  -I/mnt/d/github.com/dns_query/include -g -std=gnu++17 -o CMakeFiles/DNS_QUERY_TEST.dir/tests/test_dns_query.cpp.o -c /mnt/d/github.com/dns_query/tests/test_dns_query.cpp",
+  "file": "/mnt/d/github.com/dns_query/tests/test_dns_query.cpp"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build",
+  "command": "/usr/bin/clang++-11  -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -g -std=gnu++17 -o CMakeFiles/DNS_QUERY_LIBRARY.dir/include/dns_query/dns_query.cpp.o -c /mnt/d/github.com/dns_query/include/dns_query/dns_query.cpp",
+  "file": "/mnt/d/github.com/dns_query/include/dns_query/dns_query.cpp"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares__addrinfo2hostent.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares__addrinfo2hostent.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares__addrinfo2hostent.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares__addrinfo_localhost.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares__addrinfo_localhost.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares__addrinfo_localhost.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares__close_sockets.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares__close_sockets.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares__close_sockets.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares__get_hostent.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares__get_hostent.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares__get_hostent.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares__parse_into_addrinfo.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares__parse_into_addrinfo.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares__parse_into_addrinfo.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares__readaddrinfo.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares__readaddrinfo.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares__readaddrinfo.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares__sortaddrinfo.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares__sortaddrinfo.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares__sortaddrinfo.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares__read_line.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares__read_line.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares__read_line.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares__timeval.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares__timeval.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares__timeval.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_android.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_android.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_android.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_cancel.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_cancel.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_cancel.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_data.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_data.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_data.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_destroy.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_destroy.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_destroy.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_expand_name.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_expand_name.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_expand_name.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_expand_string.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_expand_string.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_expand_string.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_fds.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_fds.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_fds.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_free_hostent.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_free_hostent.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_free_hostent.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_free_string.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_free_string.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_free_string.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_freeaddrinfo.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_freeaddrinfo.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_freeaddrinfo.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_getaddrinfo.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_getaddrinfo.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_getaddrinfo.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_getenv.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_getenv.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_getenv.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_gethostbyaddr.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_gethostbyaddr.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_gethostbyaddr.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_gethostbyname.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_gethostbyname.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_gethostbyname.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_getnameinfo.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_getnameinfo.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_getnameinfo.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_getsock.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_getsock.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_getsock.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_init.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_init.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_init.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_library_init.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_library_init.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_library_init.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_llist.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_llist.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_llist.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_mkquery.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_mkquery.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_mkquery.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_create_query.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_create_query.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_create_query.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_nowarn.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_nowarn.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_nowarn.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_options.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_options.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_options.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_parse_a_reply.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_parse_a_reply.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_parse_a_reply.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_parse_aaaa_reply.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_parse_aaaa_reply.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_parse_aaaa_reply.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_parse_caa_reply.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_parse_caa_reply.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_parse_caa_reply.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_parse_mx_reply.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_parse_mx_reply.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_parse_mx_reply.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_parse_naptr_reply.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_parse_naptr_reply.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_parse_naptr_reply.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_parse_ns_reply.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_parse_ns_reply.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_parse_ns_reply.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_parse_ptr_reply.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_parse_ptr_reply.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_parse_ptr_reply.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_parse_soa_reply.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_parse_soa_reply.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_parse_soa_reply.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_parse_srv_reply.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_parse_srv_reply.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_parse_srv_reply.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_parse_txt_reply.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_parse_txt_reply.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_parse_txt_reply.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_parse_uri_reply.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_parse_uri_reply.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_parse_uri_reply.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_platform.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_platform.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_platform.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_process.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_process.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_process.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_query.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_query.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_query.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_search.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_search.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_search.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_send.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_send.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_send.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_strcasecmp.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_strcasecmp.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_strcasecmp.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_strdup.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_strdup.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_strdup.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_strerror.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_strerror.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_strerror.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_strsplit.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_strsplit.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_strsplit.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_timeout.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_timeout.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_timeout.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_version.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_version.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_version.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/ares_writev.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_writev.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_writev.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/bitncmp.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/bitncmp.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/bitncmp.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/inet_net_pton.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/inet_net_pton.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/inet_net_pton.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/inet_ntop.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/inet_ntop.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/inet_ntop.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/lib",
+  "command": "/usr/bin/clang-11 -DCARES_BUILDING_LIBRARY -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -Dc_ares_EXPORTS -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -g -fPIC -o CMakeFiles/c-ares.dir/windows_port.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/windows_port.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/windows_port.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/tools",
+  "command": "/usr/bin/clang-11 -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/tools -g -o CMakeFiles/acountry.dir/acountry.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/tools/acountry.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/tools/acountry.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/tools",
+  "command": "/usr/bin/clang-11 -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/tools -g -o CMakeFiles/acountry.dir/ares_getopt.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/tools/ares_getopt.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/tools/ares_getopt.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/tools",
+  "command": "/usr/bin/clang-11 -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/tools -g -o CMakeFiles/acountry.dir/__/lib/ares_nowarn.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_nowarn.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_nowarn.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/tools",
+  "command": "/usr/bin/clang-11 -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/tools -g -o CMakeFiles/acountry.dir/__/lib/ares_strcasecmp.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_strcasecmp.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_strcasecmp.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/tools",
+  "command": "/usr/bin/clang-11 -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/tools -g -o CMakeFiles/adig.dir/adig.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/tools/adig.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/tools/adig.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/tools",
+  "command": "/usr/bin/clang-11 -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/tools -g -o CMakeFiles/adig.dir/ares_getopt.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/tools/ares_getopt.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/tools/ares_getopt.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/tools",
+  "command": "/usr/bin/clang-11 -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/tools -g -o CMakeFiles/adig.dir/__/lib/ares_nowarn.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_nowarn.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_nowarn.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/tools",
+  "command": "/usr/bin/clang-11 -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/tools -g -o CMakeFiles/adig.dir/__/lib/ares_strcasecmp.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_strcasecmp.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_strcasecmp.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/tools",
+  "command": "/usr/bin/clang-11 -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/tools -g -o CMakeFiles/ahost.dir/ahost.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/tools/ahost.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/tools/ahost.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/tools",
+  "command": "/usr/bin/clang-11 -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/tools -g -o CMakeFiles/ahost.dir/ares_getopt.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/tools/ares_getopt.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/tools/ares_getopt.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/tools",
+  "command": "/usr/bin/clang-11 -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/tools -g -o CMakeFiles/ahost.dir/__/lib/ares_nowarn.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_nowarn.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_nowarn.c"
+},
+{
+  "directory": "/mnt/d/github.com/dns_query/build/third_party/c-ares/src/tools",
+  "command": "/usr/bin/clang-11 -DHAVE_CONFIG_H=1 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600 -I/mnt/d/github.com/dns_query/build/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares -I/mnt/d/github.com/dns_query/third_party/c-ares/src/lib -I/mnt/d/github.com/dns_query/third_party/c-ares/include -I/mnt/d/github.com/dns_query/third_party/c-ares/src/tools -g -o CMakeFiles/ahost.dir/__/lib/ares_strcasecmp.c.o -c /mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_strcasecmp.c",
+  "file": "/mnt/d/github.com/dns_query/third_party/c-ares/src/lib/ares_strcasecmp.c"
+}
+]

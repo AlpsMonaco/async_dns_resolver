@@ -1,0 +1,2 @@
+/usr/bin/ar qc libdns_query_library.a CMakeFiles/DNS_QUERY_LIBRARY.dir/include/dns_query/dns_query.cpp.o
+/usr/bin/ranlib libdns_query_library.a

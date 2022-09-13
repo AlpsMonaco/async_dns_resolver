@@ -1,0 +1,729 @@
+Determining if the function res_servicename exists failed with the following output:
+Change Dir: /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_cead5/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_cead5.dir/build.make CMakeFiles/cmTC_cead5.dir/build
+gmake[1]: Entering directory '/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cead5.dir/CheckFunctionExists.c.o
+/usr/bin/clang-11   -DCHECK_FUNCTION_EXISTS=res_servicename -o CMakeFiles/cmTC_cead5.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.18/Modules/CheckFunctionExists.c
+Linking C executable cmTC_cead5
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cead5.dir/link.txt --verbose=1
+/usr/bin/clang-11  -DCHECK_FUNCTION_EXISTS=res_servicename -rdynamic CMakeFiles/cmTC_cead5.dir/CheckFunctionExists.c.o -o cmTC_cead5 
+/usr/bin/ld: CMakeFiles/cmTC_cead5.dir/CheckFunctionExists.c.o: in function `main':
+CheckFunctionExists.c:(.text+0x17): undefined reference to `res_servicename'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+gmake[1]: *** [CMakeFiles/cmTC_cead5.dir/build.make:106: cmTC_cead5] Error 1
+gmake[1]: Leaving directory '/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_cead5/fast] Error 2
+
+
+
+Determining if the function res_servicename exists in the resolv failed with the following output:
+Change Dir: /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_d34c1/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_d34c1.dir/build.make CMakeFiles/cmTC_d34c1.dir/build
+gmake[1]: Entering directory '/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d34c1.dir/CheckFunctionExists.c.o
+/usr/bin/clang-11   -DCHECK_FUNCTION_EXISTS=res_servicename -o CMakeFiles/cmTC_d34c1.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.18/Modules/CheckFunctionExists.c
+Linking C executable cmTC_d34c1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d34c1.dir/link.txt --verbose=1
+/usr/bin/clang-11  -DCHECK_FUNCTION_EXISTS=res_servicename -rdynamic CMakeFiles/cmTC_d34c1.dir/CheckFunctionExists.c.o -o cmTC_d34c1  -lresolv 
+/usr/bin/ld: CMakeFiles/cmTC_d34c1.dir/CheckFunctionExists.c.o: in function `main':
+CheckFunctionExists.c:(.text+0x17): undefined reference to `res_servicename'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+gmake[1]: *** [CMakeFiles/cmTC_d34c1.dir/build.make:106: cmTC_d34c1] Error 1
+gmake[1]: Leaving directory '/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_d34c1/fast] Error 2
+
+
+
+Determining if files sys/sockio.h exist failed with the following output:
+Change Dir: /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_0ecab/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0ecab.dir/build.make CMakeFiles/cmTC_0ecab.dir/build
+gmake[1]: Entering directory '/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0ecab.dir/HAVE_SYS_SOCKIO_H.c.o
+/usr/bin/clang-11    -o CMakeFiles/cmTC_0ecab.dir/HAVE_SYS_SOCKIO_H.c.o -c /mnt/d/github.com/dns_query/build/CMakeFiles/CheckIncludeFiles/HAVE_SYS_SOCKIO_H.c
+/mnt/d/github.com/dns_query/build/CMakeFiles/CheckIncludeFiles/HAVE_SYS_SOCKIO_H.c:2:10: fatal error: 'sys/sockio.h' file not found
+#include <sys/sockio.h>
+         ^~~~~~~~~~~~~~
+1 error generated.
+gmake[1]: *** [CMakeFiles/cmTC_0ecab.dir/build.make:85: CMakeFiles/cmTC_0ecab.dir/HAVE_SYS_SOCKIO_H.c.o] Error 1
+gmake[1]: Leaving directory '/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_0ecab/fast] Error 2
+
+
+Source:
+/* */
+#include <sys/sockio.h>
+
+
+int main(void){return 0;}
+
+Determining if files socket.h exist failed with the following output:
+Change Dir: /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_4f543/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_4f543.dir/build.make CMakeFiles/cmTC_4f543.dir/build
+gmake[1]: Entering directory '/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4f543.dir/HAVE_SOCKET_H.c.o
+/usr/bin/clang-11    -o CMakeFiles/cmTC_4f543.dir/HAVE_SOCKET_H.c.o -c /mnt/d/github.com/dns_query/build/CMakeFiles/CheckIncludeFiles/HAVE_SOCKET_H.c
+/mnt/d/github.com/dns_query/build/CMakeFiles/CheckIncludeFiles/HAVE_SOCKET_H.c:2:10: fatal error: 'socket.h' file not found
+#include <socket.h>
+         ^~~~~~~~~~
+1 error generated.
+gmake[1]: *** [CMakeFiles/cmTC_4f543.dir/build.make:85: CMakeFiles/cmTC_4f543.dir/HAVE_SOCKET_H.c.o] Error 1
+gmake[1]: Leaving directory '/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_4f543/fast] Error 2
+
+
+Source:
+/* */
+#include <socket.h>
+
+
+int main(void){return 0;}
+
+Determining if files stropts.h exist failed with the following output:
+Change Dir: /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_693bc/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_693bc.dir/build.make CMakeFiles/cmTC_693bc.dir/build
+gmake[1]: Entering directory '/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_693bc.dir/HAVE_STROPTS_H.c.o
+/usr/bin/clang-11    -o CMakeFiles/cmTC_693bc.dir/HAVE_STROPTS_H.c.o -c /mnt/d/github.com/dns_query/build/CMakeFiles/CheckIncludeFiles/HAVE_STROPTS_H.c
+/mnt/d/github.com/dns_query/build/CMakeFiles/CheckIncludeFiles/HAVE_STROPTS_H.c:2:10: fatal error: 'stropts.h' file not found
+#include <stropts.h>
+         ^~~~~~~~~~~
+1 error generated.
+gmake[1]: *** [CMakeFiles/cmTC_693bc.dir/build.make:85: CMakeFiles/cmTC_693bc.dir/HAVE_STROPTS_H.c.o] Error 1
+gmake[1]: Leaving directory '/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_693bc/fast] Error 2
+
+
+Source:
+/* */
+#include <stropts.h>
+
+
+int main(void){return 0;}
+
+Performing C SOURCE FILE Test HAVE_TYPE_SOCKET failed with the following output:
+Change Dir: /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_a2f75/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_a2f75.dir/build.make CMakeFiles/cmTC_a2f75.dir/build
+gmake[1]: Entering directory '/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a2f75.dir/src.c.o
+/usr/bin/clang-11 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600  -DHAVE_TYPE_SOCKET -o CMakeFiles/cmTC_a2f75.dir/src.c.o -c /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp/src.c
+/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp/src.c:26:4: error: use of undeclared identifier 'SOCKET'
+                        SOCKET var_exists;
+                        ^
+/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp/src.c:27:10: error: use of undeclared identifier 'var_exists'
+                        (void)var_exists;
+                              ^
+2 errors generated.
+gmake[1]: *** [CMakeFiles/cmTC_a2f75.dir/build.make:85: CMakeFiles/cmTC_a2f75.dir/src.c.o] Error 1
+gmake[1]: Leaving directory '/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_a2f75/fast] Error 2
+
+
+Source file was:
+
+		#include <stdio.h>
+		#include <stdlib.h>
+	
+		#include <stdbool.h>
+		#include <sys/types.h>
+		#include <arpa/inet.h>
+		#include <arpa/nameser.h>
+		#include <netdb.h>
+		#include <net/if.h>
+		#include <netinet/in.h>
+		#include <netinet/tcp.h>
+		#include <signal.h>
+		#include <stdlib.h>
+		#include <string.h>
+		#include <strings.h>
+		#include <sys/ioctl.h>
+		#include <sys/select.h>
+		#include <sys/socket.h>
+		#include <sys/time.h>
+		#include <sys/uio.h>
+		#include <time.h>
+		#include <fcntl.h>
+		#include <unistd.h>
+		int main() {
+			SOCKET var_exists;
+			(void)var_exists;
+			return 0;
+		}
+	
+Determining if the SO_NONBLOCK exist failed with the following output:
+Change Dir: /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_525a5/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_525a5.dir/build.make CMakeFiles/cmTC_525a5.dir/build
+gmake[1]: Entering directory '/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_525a5.dir/CheckSymbolExists.c.o
+/usr/bin/clang-11 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600   -o CMakeFiles/cmTC_525a5.dir/CheckSymbolExists.c.o -c /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:27:19: error: use of undeclared identifier 'SO_NONBLOCK'
+  return ((int*)(&SO_NONBLOCK))[argc];
+                  ^
+1 error generated.
+gmake[1]: *** [CMakeFiles/cmTC_525a5.dir/build.make:85: CMakeFiles/cmTC_525a5.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_525a5/fast] Error 2
+
+
+File /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdbool.h>
+#include <sys/types.h>
+#include <arpa/inet.h>
+#include <arpa/nameser.h>
+#include <netdb.h>
+#include <net/if.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <signal.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/ioctl.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/time.h>
+#include <sys/uio.h>
+#include <time.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef SO_NONBLOCK
+  return ((int*)(&SO_NONBLOCK))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the bitncmp exist failed with the following output:
+Change Dir: /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_7c8ff/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_7c8ff.dir/build.make CMakeFiles/cmTC_7c8ff.dir/build
+gmake[1]: Entering directory '/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7c8ff.dir/CheckSymbolExists.c.o
+/usr/bin/clang-11 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600   -o CMakeFiles/cmTC_7c8ff.dir/CheckSymbolExists.c.o -c /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:27:19: error: use of undeclared identifier 'bitncmp'
+  return ((int*)(&bitncmp))[argc];
+                  ^
+1 error generated.
+gmake[1]: *** [CMakeFiles/cmTC_7c8ff.dir/build.make:85: CMakeFiles/cmTC_7c8ff.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_7c8ff/fast] Error 2
+
+
+File /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdbool.h>
+#include <sys/types.h>
+#include <arpa/inet.h>
+#include <arpa/nameser.h>
+#include <netdb.h>
+#include <net/if.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <signal.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/ioctl.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/time.h>
+#include <sys/uio.h>
+#include <time.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef bitncmp
+  return ((int*)(&bitncmp))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the closesocket exist failed with the following output:
+Change Dir: /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_c56d4/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_c56d4.dir/build.make CMakeFiles/cmTC_c56d4.dir/build
+gmake[1]: Entering directory '/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c56d4.dir/CheckSymbolExists.c.o
+/usr/bin/clang-11 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600   -o CMakeFiles/cmTC_c56d4.dir/CheckSymbolExists.c.o -c /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:27:19: error: use of undeclared identifier 'closesocket'
+  return ((int*)(&closesocket))[argc];
+                  ^
+1 error generated.
+gmake[1]: *** [CMakeFiles/cmTC_c56d4.dir/build.make:85: CMakeFiles/cmTC_c56d4.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_c56d4/fast] Error 2
+
+
+File /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdbool.h>
+#include <sys/types.h>
+#include <arpa/inet.h>
+#include <arpa/nameser.h>
+#include <netdb.h>
+#include <net/if.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <signal.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/ioctl.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/time.h>
+#include <sys/uio.h>
+#include <time.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef closesocket
+  return ((int*)(&closesocket))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the CloseSocket exist failed with the following output:
+Change Dir: /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_ee224/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_ee224.dir/build.make CMakeFiles/cmTC_ee224.dir/build
+gmake[1]: Entering directory '/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ee224.dir/CheckSymbolExists.c.o
+/usr/bin/clang-11 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600   -o CMakeFiles/cmTC_ee224.dir/CheckSymbolExists.c.o -c /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:27:19: error: use of undeclared identifier 'CloseSocket'
+  return ((int*)(&CloseSocket))[argc];
+                  ^
+1 error generated.
+gmake[1]: *** [CMakeFiles/cmTC_ee224.dir/build.make:85: CMakeFiles/cmTC_ee224.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_ee224/fast] Error 2
+
+
+File /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdbool.h>
+#include <sys/types.h>
+#include <arpa/inet.h>
+#include <arpa/nameser.h>
+#include <netdb.h>
+#include <net/if.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <signal.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/ioctl.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/time.h>
+#include <sys/uio.h>
+#include <time.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CloseSocket
+  return ((int*)(&CloseSocket))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the inet_net_pton exist failed with the following output:
+Change Dir: /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_2e1f8/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_2e1f8.dir/build.make CMakeFiles/cmTC_2e1f8.dir/build
+gmake[1]: Entering directory '/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2e1f8.dir/CheckSymbolExists.c.o
+/usr/bin/clang-11 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600   -o CMakeFiles/cmTC_2e1f8.dir/CheckSymbolExists.c.o -c /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_2e1f8
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2e1f8.dir/link.txt --verbose=1
+/usr/bin/clang-11 -rdynamic CMakeFiles/cmTC_2e1f8.dir/CheckSymbolExists.c.o -o cmTC_2e1f8 
+/usr/bin/ld: CMakeFiles/cmTC_2e1f8.dir/CheckSymbolExists.c.o: in function `main':
+CheckSymbolExists.c:(.text+0x19): undefined reference to `inet_net_pton'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+gmake[1]: *** [CMakeFiles/cmTC_2e1f8.dir/build.make:106: cmTC_2e1f8] Error 1
+gmake[1]: Leaving directory '/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_2e1f8/fast] Error 2
+
+
+File /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdbool.h>
+#include <sys/types.h>
+#include <arpa/inet.h>
+#include <arpa/nameser.h>
+#include <netdb.h>
+#include <net/if.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <signal.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/ioctl.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/time.h>
+#include <sys/uio.h>
+#include <time.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef inet_net_pton
+  return ((int*)(&inet_net_pton))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the ioctlsocket exist failed with the following output:
+Change Dir: /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_34ac1/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_34ac1.dir/build.make CMakeFiles/cmTC_34ac1.dir/build
+gmake[1]: Entering directory '/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_34ac1.dir/CheckSymbolExists.c.o
+/usr/bin/clang-11 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600   -o CMakeFiles/cmTC_34ac1.dir/CheckSymbolExists.c.o -c /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:27:19: error: use of undeclared identifier 'ioctlsocket'
+  return ((int*)(&ioctlsocket))[argc];
+                  ^
+1 error generated.
+gmake[1]: *** [CMakeFiles/cmTC_34ac1.dir/build.make:85: CMakeFiles/cmTC_34ac1.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_34ac1/fast] Error 2
+
+
+File /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdbool.h>
+#include <sys/types.h>
+#include <arpa/inet.h>
+#include <arpa/nameser.h>
+#include <netdb.h>
+#include <net/if.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <signal.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/ioctl.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/time.h>
+#include <sys/uio.h>
+#include <time.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef ioctlsocket
+  return ((int*)(&ioctlsocket))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the IoctlSocket exist failed with the following output:
+Change Dir: /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_819af/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_819af.dir/build.make CMakeFiles/cmTC_819af.dir/build
+gmake[1]: Entering directory '/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_819af.dir/CheckSymbolExists.c.o
+/usr/bin/clang-11 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600   -o CMakeFiles/cmTC_819af.dir/CheckSymbolExists.c.o -c /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:27:19: error: use of undeclared identifier 'IoctlSocket'
+  return ((int*)(&IoctlSocket))[argc];
+                  ^
+1 error generated.
+gmake[1]: *** [CMakeFiles/cmTC_819af.dir/build.make:85: CMakeFiles/cmTC_819af.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_819af/fast] Error 2
+
+
+File /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdbool.h>
+#include <sys/types.h>
+#include <arpa/inet.h>
+#include <arpa/nameser.h>
+#include <netdb.h>
+#include <net/if.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <signal.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/ioctl.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/time.h>
+#include <sys/uio.h>
+#include <time.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef IoctlSocket
+  return ((int*)(&IoctlSocket))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strcmpi exist failed with the following output:
+Change Dir: /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_53dfb/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_53dfb.dir/build.make CMakeFiles/cmTC_53dfb.dir/build
+gmake[1]: Entering directory '/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_53dfb.dir/CheckSymbolExists.c.o
+/usr/bin/clang-11 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600   -o CMakeFiles/cmTC_53dfb.dir/CheckSymbolExists.c.o -c /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:27:19: error: use of undeclared identifier 'strcmpi'; did you mean 'strcmp'?
+  return ((int*)(&strcmpi))[argc];
+                  ^~~~~~~
+                  strcmp
+/usr/include/string.h:137:12: note: 'strcmp' declared here
+extern int strcmp (const char *__s1, const char *__s2)
+           ^
+1 error generated.
+gmake[1]: *** [CMakeFiles/cmTC_53dfb.dir/build.make:85: CMakeFiles/cmTC_53dfb.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_53dfb/fast] Error 2
+
+
+File /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdbool.h>
+#include <sys/types.h>
+#include <arpa/inet.h>
+#include <arpa/nameser.h>
+#include <netdb.h>
+#include <net/if.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <signal.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/ioctl.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/time.h>
+#include <sys/uio.h>
+#include <time.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strcmpi
+  return ((int*)(&strcmpi))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the stricmp exist failed with the following output:
+Change Dir: /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_37665/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_37665.dir/build.make CMakeFiles/cmTC_37665.dir/build
+gmake[1]: Entering directory '/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_37665.dir/CheckSymbolExists.c.o
+/usr/bin/clang-11 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600   -o CMakeFiles/cmTC_37665.dir/CheckSymbolExists.c.o -c /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:27:19: error: use of undeclared identifier 'stricmp'
+  return ((int*)(&stricmp))[argc];
+                  ^
+1 error generated.
+gmake[1]: *** [CMakeFiles/cmTC_37665.dir/build.make:85: CMakeFiles/cmTC_37665.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_37665/fast] Error 2
+
+
+File /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdbool.h>
+#include <sys/types.h>
+#include <arpa/inet.h>
+#include <arpa/nameser.h>
+#include <netdb.h>
+#include <net/if.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <signal.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/ioctl.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/time.h>
+#include <sys/uio.h>
+#include <time.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef stricmp
+  return ((int*)(&stricmp))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strncmpi exist failed with the following output:
+Change Dir: /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_5b9e5/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_5b9e5.dir/build.make CMakeFiles/cmTC_5b9e5.dir/build
+gmake[1]: Entering directory '/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5b9e5.dir/CheckSymbolExists.c.o
+/usr/bin/clang-11 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600   -o CMakeFiles/cmTC_5b9e5.dir/CheckSymbolExists.c.o -c /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:27:19: error: use of undeclared identifier 'strncmpi'; did you mean 'strncmp'?
+  return ((int*)(&strncmpi))[argc];
+                  ^~~~~~~~
+                  strncmp
+/usr/include/string.h:140:12: note: 'strncmp' declared here
+extern int strncmp (const char *__s1, const char *__s2, size_t __n)
+           ^
+1 error generated.
+gmake[1]: *** [CMakeFiles/cmTC_5b9e5.dir/build.make:85: CMakeFiles/cmTC_5b9e5.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_5b9e5/fast] Error 2
+
+
+File /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdbool.h>
+#include <sys/types.h>
+#include <arpa/inet.h>
+#include <arpa/nameser.h>
+#include <netdb.h>
+#include <net/if.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <signal.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/ioctl.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/time.h>
+#include <sys/uio.h>
+#include <time.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strncmpi
+  return ((int*)(&strncmpi))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strnicmp exist failed with the following output:
+Change Dir: /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_ac1e0/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_ac1e0.dir/build.make CMakeFiles/cmTC_ac1e0.dir/build
+gmake[1]: Entering directory '/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ac1e0.dir/CheckSymbolExists.c.o
+/usr/bin/clang-11 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600   -o CMakeFiles/cmTC_ac1e0.dir/CheckSymbolExists.c.o -c /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:27:19: error: use of undeclared identifier 'strnicmp'; did you mean 'strncmp'?
+  return ((int*)(&strnicmp))[argc];
+                  ^~~~~~~~
+                  strncmp
+/usr/include/string.h:140:12: note: 'strncmp' declared here
+extern int strncmp (const char *__s1, const char *__s2, size_t __n)
+           ^
+1 error generated.
+gmake[1]: *** [CMakeFiles/cmTC_ac1e0.dir/build.make:85: CMakeFiles/cmTC_ac1e0.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_ac1e0/fast] Error 2
+
+
+File /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdbool.h>
+#include <sys/types.h>
+#include <arpa/inet.h>
+#include <arpa/nameser.h>
+#include <netdb.h>
+#include <net/if.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <signal.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/ioctl.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/time.h>
+#include <sys/uio.h>
+#include <time.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strnicmp
+  return ((int*)(&strnicmp))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the function __system_property_get exists failed with the following output:
+Change Dir: /mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_8e400/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_8e400.dir/build.make CMakeFiles/cmTC_8e400.dir/build
+gmake[1]: Entering directory '/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8e400.dir/CheckFunctionExists.c.o
+/usr/bin/clang-11 -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600  -DCHECK_FUNCTION_EXISTS=__system_property_get -o CMakeFiles/cmTC_8e400.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.18/Modules/CheckFunctionExists.c
+Linking C executable cmTC_8e400
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8e400.dir/link.txt --verbose=1
+/usr/bin/clang-11  -DCHECK_FUNCTION_EXISTS=__system_property_get -rdynamic CMakeFiles/cmTC_8e400.dir/CheckFunctionExists.c.o -o cmTC_8e400 
+/usr/bin/ld: CMakeFiles/cmTC_8e400.dir/CheckFunctionExists.c.o: in function `main':
+CheckFunctionExists.c:(.text+0x17): undefined reference to `__system_property_get'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+gmake[1]: *** [CMakeFiles/cmTC_8e400.dir/build.make:106: cmTC_8e400] Error 1
+gmake[1]: Leaving directory '/mnt/d/github.com/dns_query/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_8e400/fast] Error 2
+
+
+

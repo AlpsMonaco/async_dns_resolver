@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/dns_query/dns_query.h
+string_view
+-
+string
+-
+vector
+-
+ostream
+-
+functional
+-
+netdb.h
+-
+
+/mnt/d/github.com/dns_query/tests/test_dns_query.cpp
+iostream
+-
+thread
+-
+dns_query/dns_query.h
+/mnt/d/github.com/dns_query/tests/dns_query/dns_query.h
+

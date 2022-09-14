@@ -40,7 +40,7 @@ namespace dns
 
         struct Iterator
         {
-            Iterator(short addr_type, const char *const *addr_list);
+            Iterator(int addr_type, const char *const *addr_list);
             Iterator operator++(int);
             Iterator &operator++();
             std::string_view &operator*();
@@ -52,7 +52,7 @@ namespace dns
 
         private:
             void UpdatePointer();
-            short addr_type_;
+            int addr_type_;
             const char *const *p_;
             char buf_[46];
             std::string_view ptr_;

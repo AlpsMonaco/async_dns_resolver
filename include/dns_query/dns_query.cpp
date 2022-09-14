@@ -81,7 +81,7 @@ namespace dns
         return dns::Error(code_);
     }
 
-    Result::Iterator::Iterator(short addr_type, const char *const *addr_list)
+    Result::Iterator::Iterator(int addr_type, const char *const *addr_list)
         : addr_type_(addr_type),
           p_(addr_list)
     {

@@ -87,6 +87,12 @@ namespace dns
     {
     }
 
+    Result::Iterator::Iterator(const char *const *addr_list)
+        : addr_type_(),
+          p_(addr_list)
+    {
+    }
+
     Result::Iterator Result::Iterator::operator++(int)
     {
         Iterator it(addr_type_, p_);
@@ -111,7 +117,7 @@ namespace dns
 
     Result::Iterator Result::End() const
     {
-        return Iterator{hostent_ptr_->h_addrtype, Iterator::end};
+        return iterator_end;
     }
 
     Result::Iterator Result::begin() const

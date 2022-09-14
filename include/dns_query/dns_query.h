@@ -5,7 +5,7 @@
 #include <functional>
 
 #ifdef _WIN32
-
+#include <WinSock2.h>
 #else
 #include <netdb.h>
 #endif

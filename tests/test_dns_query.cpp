@@ -1,9 +1,16 @@
 #include <iostream>
 #include <thread>
+#include "ares_setup.h"
 #include "dns_query/dns_query.h"
 
 int main(int argc, char **argv)
 {
+#ifdef USE_WINSOCK
+    WORD wVersionRequested = MAKEWORD(USE_WINSOCK, USE_WINSOCK);
+    WSADATA wsaData;
+    WSAStartup(wVersionRequested, &wsaData);
+#endif
+
     dns::DNSQuery query;
     query.Add("www.baidu.com");
     query.Add("www.google.com");
@@ -24,4 +31,8 @@ int main(int argc, char **argv)
     {
         std::cout << err << std::endl;
     }
+
+#ifdef USE_WINSOCK
+    WSACleanup();
+#endif
 }

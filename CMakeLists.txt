@@ -4,6 +4,9 @@ project(dns_query)
 
 set (CMAKE_CXX_STANDARD 17)
 
+set(CARES_SHARED OFF)
+set(CARES_STATIC ON)
+
 add_subdirectory(third_party/c-ares)
 
 add_library(DNS_QUERY_LIBRARY
@@ -25,6 +28,9 @@ add_executable(DNS_QUERY_TEST
 target_include_directories(DNS_QUERY_TEST
     PRIVATE
         ${PROJECT_SOURCE_DIR}/include
+        ${CMAKE_SOURCE_DIR}/third_party/c-ares/src/lib
+        ${CMAKE_SOURCE_DIR}/third_party/c-ares/include
+        ${CMAKE_BINARY_DIR}/third_party/c-ares
 )
 
 target_link_libraries(DNS_QUERY_TEST

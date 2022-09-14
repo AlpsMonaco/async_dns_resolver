@@ -4,12 +4,6 @@
 
 int main(int argc, char **argv)
 {
-#ifdef _WIN32
-    WORD wVersionRequested;
-    WSADATA wsaData;
-    wVersionRequested = MAKEWORD(2, 2);
-    WSAStartup(wVersionRequested, &wsaData);
-#endif
     dns::DNSQuery query;
     query.Add("www.baidu.com");
     query.Add("www.google.com");
@@ -21,9 +15,6 @@ int main(int argc, char **argv)
                                    return;
                                }
                                std::cout << result.Name() << std::endl;
-                               if(result.Begin() != dns::Result::iterator_end){
-                                std::cout << 1 << std::endl;
-                               }
                                for (const auto &v : result)
                                {
                                    std::cout << v << std::endl;
@@ -32,7 +23,4 @@ int main(int argc, char **argv)
     {
         std::cout << err << std::endl;
     }
-#ifdef _WIN32
-    WSACleanup();
-#endif
 }

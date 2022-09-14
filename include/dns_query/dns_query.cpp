@@ -159,10 +159,19 @@ namespace dns
     DNSQuery::DNSQuery()
         : domain_list_()
     {
+#ifdef _WIN32
+        WORD wVersionRequested;
+        WSADATA wsaData;
+        wVersionRequested = MAKEWORD(2, 2);
+        WSAStartup(wVersionRequested, &wsaData);
+#endif
     }
 
     DNSQuery::~DNSQuery()
     {
+#ifdef _WIN32
+        WSACleanup();
+#endif
     }
 
     void DNSQuery::Add(const std::string_view &domain)

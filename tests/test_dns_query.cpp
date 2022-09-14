@@ -21,6 +21,9 @@ int main(int argc, char **argv)
                                    return;
                                }
                                std::cout << result.Name() << std::endl;
+                               if(result.Begin() != dns::Result::iterator_end){
+                                std::cout << 1 << std::endl;
+                               }
                                for (const auto &v : result)
                                {
                                    std::cout << v << std::endl;

@@ -44,6 +44,7 @@ namespace dns
         struct Iterator
         {
             Iterator(int addr_type, const char *const *addr_list);
+            Iterator(const char *const *addr_list);
             Iterator operator++(int);
             Iterator &operator++();
             std::string_view &operator*();
@@ -61,6 +62,7 @@ namespace dns
             std::string_view ptr_;
         };
 
+        static constexpr char* const* iterator_end = Iterator::end;
         const std::string_view &Name() const;
         bool HasError() const;
         Error Error() const;

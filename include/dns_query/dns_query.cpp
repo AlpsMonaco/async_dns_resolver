@@ -149,6 +149,7 @@ namespace dns
 
         static Error Start()
         {
+            Instance().index_ = 0;
             struct ares_options options;
             int optmask = 0;
             int status, nfds, c, addr_family = AF_INET;

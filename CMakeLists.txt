@@ -31,3 +31,5 @@ target_link_libraries(DNS_QUERY_TEST
     PRIVATE
         DNS_QUERY_LIBRARY
 )
+
+set_target_properties(DNS_QUERY_TEST PROPERTIES OUTPUT_NAME "dns_query_test")

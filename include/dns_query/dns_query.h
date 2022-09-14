@@ -19,13 +19,13 @@ namespace dns
         ~Error();
 
         operator bool();
-        operator bool() const;
         int Code();
-        int Code() const;
         std::string_view Message();
-        std::string_view Message() const;
-
         friend std::ostream &operator<<(std::ostream &os, const Error &error);
+
+        operator bool() const;
+        int Code() const;
+        std::string_view Message() const;
 
     protected:
         int code_;

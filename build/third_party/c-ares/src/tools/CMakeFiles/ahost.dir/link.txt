@@ -1,1 +1,0 @@
-/usr/bin/clang-11 -g -rdynamic CMakeFiles/ahost.dir/ahost.c.o CMakeFiles/ahost.dir/ares_getopt.c.o CMakeFiles/ahost.dir/__/lib/ares_nowarn.c.o CMakeFiles/ahost.dir/__/lib/ares_strcasecmp.c.o -o ../../bin/ahost  -Wl,-rpath,/mnt/d/github.com/dns_query/build/third_party/c-ares/lib: ../../lib/libcares.so.2.5.1 

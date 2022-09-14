@@ -1,1 +1,0 @@
-/usr/bin/clang++-11 -g CMakeFiles/DNS_QUERY_TEST.dir/tests/test_dns_query.cpp.o -o DNS_QUERY_TEST  -Wl,-rpath,/mnt/d/github.com/dns_query/build/third_party/c-ares/lib libdns_query_library.a third_party/c-ares/lib/libcares.so.2.5.1 

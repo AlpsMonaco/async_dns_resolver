@@ -21,6 +21,8 @@ target_link_libraries(dns_query_library
         c-ares::cares
 )
 
+add_library(dns_query::lib ALIAS dns_query_library)
+
 add_executable(dns_query_test
     ${PROJECT_SOURCE_DIR}/tests/test_dns_query.cpp
 )

@@ -1,3 +1,6 @@
+#ifndef __DNS_QUERY_H__
+#define __DNS_QUERY_H__
+
 #include <string_view>
 #include <string>
 #include <vector>
@@ -86,3 +89,5 @@ namespace dns
         std::vector<std::string> domain_list_;
     };
 }
+
+#endif

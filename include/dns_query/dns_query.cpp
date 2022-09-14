@@ -55,63 +55,99 @@ namespace dns
         return const_cast<const Error &>(*this);
     }
 
-    Record::Record(const std::string_view &domain, hostent *host)
-        : hostent_ptr_(host),
-          name_(domain)
+    Result::Result(const std::string_view &domain, int code, hostent *hostent_ptr)
+        : name_(domain),
+          code_(code),
+          hostent_ptr_(hostent_ptr)
     {
     }
 
-    Record::~Record()
+    Result::~Result()
     {
     }
 
-    std::string_view Record::Name()
-    {
-        return const_cast<const Record &>(*this).Name();
-    }
-
-    std::vector<std::string> Record::AddrList()
-    {
-        return const_cast<const Record &>(*this).AddrList();
-    }
-
-    hostent *Record::Raw()
-    {
-        return hostent_ptr_;
-    }
-
-    size_t Record::AddrLength()
-    {
-        return const_cast<const Record &>(*this).AddrLength();
-    }
-
-    size_t Record::AddrLength() const
-    {
-        return hostent_ptr_->h_length;
-    }
-
-    const hostent *Record::Raw() const
-    {
-        return hostent_ptr_;
-    }
-
-    std::string_view Record::Name() const
+    const std::string_view &Result::Name() const
     {
         return name_;
     }
 
-    std::vector<std::string> Record::AddrList() const
+    bool Result::HasError() const
     {
-        std::vector<std::string> addr_list;
-        char buf[46];
-        for (char **p = hostent_ptr_->h_addr_list; *p; p++)
-        {
-            buf[0] = '?';
-            buf[1] = '0';
-            ares_inet_ntop(hostent_ptr_->h_addrtype, *p, buf, sizeof(buf));
-            addr_list.emplace_back(buf);
-        }
-        return addr_list;
+        return code_ != 0;
+    }
+
+    Error Result::Error() const
+    {
+        return dns::Error(code_);
+    }
+
+    Result::Iterator::Iterator(short addr_type, const char *const *addr_list)
+        : addr_type_(addr_type),
+          p_(addr_list)
+    {
+    }
+
+    Result::Iterator Result::Iterator::operator++(int)
+    {
+        Iterator it(addr_type_, p_);
+        p_ += 1;
+        return it;
+    }
+
+    bool Result::Iterator::operator!=(const Result::Iterator &rhs)
+    {
+        return *rhs.p_ != *p_;
+    }
+
+    bool Result::Iterator::operator==(const Result::Iterator &rhs)
+    {
+        return *rhs.p_ == *p_;
+    }
+
+    Result::Iterator Result::Begin() const
+    {
+        return Iterator{hostent_ptr_->h_addrtype, hostent_ptr_->h_addr_list};
+    }
+
+    Result::Iterator Result::End() const
+    {
+        return Iterator{hostent_ptr_->h_addrtype, Iterator::end};
+    }
+
+    Result::Iterator Result::begin() const
+    {
+        return Begin();
+    }
+
+    Result::Iterator Result::end() const
+    {
+        return End();
+    }
+
+    Result::Iterator &Result::Iterator::operator++()
+    {
+        p_++;
+        return *this;
+    }
+
+    std::string_view &Result::Iterator::operator*()
+    {
+        UpdatePointer();
+        return ptr_;
+    }
+
+    std::string_view *Result::Iterator::operator->()
+    {
+        UpdatePointer();
+        return &ptr_;
+    }
+
+    void Result::Iterator::UpdatePointer()
+    {
+        buf_[0] = '?';
+        buf_[1] = '0';
+        ares_inet_ntop(addr_type_, *p_, buf_, sizeof(buf_));
+        ptr_ = buf_;
     }
 
     DNSQuery::DNSQuery()
@@ -134,7 +170,7 @@ namespace dns
         static void Callback(void *arg, int status, int timeouts, struct hostent *host)
         {
             const std::string &domain = *reinterpret_cast<std::string *>(arg);
-            Instance().callback_(Record{domain, host}, status);
+            Instance().callback_(Result{domain, status, host});
         }
 
         static void SetCallback(const DNSQuery::Callback &callback)
@@ -152,10 +188,9 @@ namespace dns
             Instance().index_ = 0;
             struct ares_options options;
             int optmask = 0;
-            int status, nfds, c, addr_family = AF_INET;
+            int status, nfds, addr_family = AF_INET;
             fd_set read_fds, write_fds;
             struct timeval *tvp, tv;
-            struct in_addr addr4;
             memset(&options, 0, sizeof(options));
             status = ares_library_init(ARES_LIB_INIT_ALL);
             if (status != ARES_SUCCESS)
@@ -194,9 +229,10 @@ namespace dns
             return ares;
         }
 
-        Ares() : callback_(),
-                 domain_list_ptr_(nullptr),
-                 index_(0)
+        Ares()
+            : callback_(),
+              domain_list_ptr_(nullptr),
+              index_(0)
         {
         }
 

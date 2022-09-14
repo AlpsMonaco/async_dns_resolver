@@ -1,38 +1,35 @@
 #include <iostream>
 #include <thread>
-#include "ares_setup.h"
 #include "dns_query/dns_query.h"
 
 int main(int argc, char **argv)
 {
-#ifdef USE_WINSOCK
-    WORD wVersionRequested = MAKEWORD(USE_WINSOCK, USE_WINSOCK);
+#ifdef _WIN32
+    WORD wVersionRequested;
     WSADATA wsaData;
+    wVersionRequested = MAKEWORD(2, 2);
     WSAStartup(wVersionRequested, &wsaData);
 #endif
-
     dns::DNSQuery query;
     query.Add("www.baidu.com");
     query.Add("www.google.com");
-    auto err = query.Start([](const dns::Record &record, const dns::Error &err) -> void
+    auto err = query.Start([](const dns::Result &result) -> void
                            {
-                                if (err)
-                                {
-                                    std::cout << err << " " << record.Name() << std::endl ;
-                                    return;
-                                }
-                                std::cout << record.Name() << std::endl;
-                                for (const auto &addr : record.AddrList())
-                                {
-                                    std::cout << addr << std::endl;
-                                } });
-
+                               if (result.HasError())
+                               {
+                                   std::cout << result.Error() << " " << result.Name() << std::endl;
+                                   return;
+                               }
+                               std::cout << result.Name() << std::endl;
+                               for (const auto &v : result)
+                               {
+                                   std::cout << v << std::endl;
+                               } });
     if (err)
     {
         std::cout << err << std::endl;
     }
-
-#ifdef USE_WINSOCK
+#ifdef _WIN32
     WSACleanup();
 #endif
 }

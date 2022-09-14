@@ -1,6 +1,8 @@
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.1)
 
 project(dns_query)
+
+set(CMAKE_POLICY_DEFAULT_CMP0077 NEW)
 
 set (CMAKE_CXX_STANDARD 17)
 
@@ -9,33 +11,26 @@ set(CARES_STATIC ON)
 
 add_subdirectory(third_party/c-ares)
 
-add_library(DNS_QUERY_LIBRARY
+add_library(dns_query_library
     ${PROJECT_SOURCE_DIR}/include/dns_query/dns_query.h
     ${PROJECT_SOURCE_DIR}/include/dns_query/dns_query.cpp
 )
 
-set_target_properties(DNS_QUERY_LIBRARY PROPERTIES OUTPUT_NAME "dns_query_library")
-
-target_link_libraries(DNS_QUERY_LIBRARY
+target_link_libraries(dns_query_library
     PRIVATE
         c-ares::cares
 )
 
-add_executable(DNS_QUERY_TEST
+add_executable(dns_query_test
     ${PROJECT_SOURCE_DIR}/tests/test_dns_query.cpp
 )
 
-target_include_directories(DNS_QUERY_TEST
+target_include_directories(dns_query_test
     PRIVATE
         ${PROJECT_SOURCE_DIR}/include
-        ${CMAKE_SOURCE_DIR}/third_party/c-ares/src/lib
-        ${CMAKE_SOURCE_DIR}/third_party/c-ares/include
-        ${CMAKE_BINARY_DIR}/third_party/c-ares
 )
 
-target_link_libraries(DNS_QUERY_TEST
+target_link_libraries(dns_query_test
     PRIVATE
-        DNS_QUERY_LIBRARY
+        dns_query_library
 )
-
-set_target_properties(DNS_QUERY_TEST PROPERTIES OUTPUT_NAME "dns_query_test")

@@ -85,7 +85,8 @@ namespace dns
         ~DNSQuery();
 
         void AsyncResolve(const std::string_view& domain, const Callback& callback);
-        Error Run();
+        Error Run(bool stop_at_end = true);
+        void Stop();
     };
 } // namespace dns
 

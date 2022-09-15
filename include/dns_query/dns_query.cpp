@@ -25,8 +25,14 @@ namespace dns
             ares_gethostbyname(Instance().channel_, domain.data(), AF_INET, Callback, query_task_ptr);
         }
 
-        static Error Run()
+        static void SetStop()
         {
+            Instance().is_stop_ = true;
+        }
+
+        static Error Run(bool stop_at_end)
+        {
+            Instance().is_stop_ = stop_at_end;
             if (Instance().init_status_ != ARES_SUCCESS) return Instance().init_status_;
             int nfds, addr_family = AF_INET;
             fd_set read_fds, write_fds;
@@ -37,11 +43,10 @@ namespace dns
                 FD_ZERO(&read_fds);
                 FD_ZERO(&write_fds);
                 nfds = ares_fds(Instance().channel_, &read_fds, &write_fds);
-                if (nfds == 0)
-                    break;
+                if (nfds == 0 && Instance().is_stop_) break;
                 tvp = ares_timeout(Instance().channel_, NULL, &tv);
                 res = select(nfds, &read_fds, &write_fds, NULL, tvp);
-                if (-1 == res) break;
+                if (-1 == res && Instance().is_stop_) break;
                 ares_process(Instance().channel_, &read_fds, &write_fds);
             }
             return ARES_SUCCESS;
@@ -81,6 +86,7 @@ namespace dns
 
         ares_channel channel_;
         int init_status_;
+        bool is_stop_;
     };
 
     std::ostream& operator<<(std::ostream& os, const Error& error)
@@ -251,8 +257,13 @@ namespace dns
         DNSQueryImpl::Add(domain, callback);
     }
 
-    Error DNSQuery::Run()
+    Error DNSQuery::Run(bool stop_at_end)
     {
-        return DNSQueryImpl::Run();
+        return DNSQueryImpl::Run(stop_at_end);
+    }
+
+    void DNSQuery::Stop()
+    {
+        DNSQueryImpl::SetStop();
     }
 } // namespace dns

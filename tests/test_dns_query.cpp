@@ -23,7 +23,8 @@ int main(int argc, char** argv)
         {
             query.Run(false);
         });
-    std::this_thread::sleep_for(std::chrono::seconds(10));
+    std::this_thread::sleep_for(std::chrono::seconds(5));
+    std::cout << "next" << std::endl;
     query.AsyncResolve("www.baidu.com", [&](const dns::Result& result) -> void
                        {
                            if (result.HasError())

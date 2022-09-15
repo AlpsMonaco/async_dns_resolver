@@ -32,6 +32,13 @@ target_include_directories(dns_query_test
         ${PROJECT_SOURCE_DIR}/include
 )
 
+if(UNIX)
+    target_link_libraries(dns_query_test
+        PRIVATE
+            pthread
+    )
+endif()
+
 target_link_libraries(dns_query_test
     PRIVATE
         dns_query_library

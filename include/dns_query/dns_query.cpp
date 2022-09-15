@@ -1,16 +1,89 @@
 #include "dns_query.h"
 #include <ares.h>
+#include <string>
 
 #ifdef _WIN32
 
 #else
 #include <string.h>
-
 #endif
 
 namespace dns
 {
-    std::ostream &operator<<(std::ostream &os, const Error &error)
+    class DNSQueryImpl
+    {
+    public:
+        struct QueryTask
+        {
+            std::string domain;
+            DNSQuery::Callback callback;
+        };
+
+        static void Add(const std::string_view& domain, const DNSQuery::Callback& callback)
+        {
+            auto query_task_ptr = new QueryTask{std::string(domain), callback};
+            ares_gethostbyname(Instance().channel_, domain.data(), AF_INET, Callback, query_task_ptr);
+        }
+
+        static Error Run()
+        {
+            if (Instance().init_status_ != ARES_SUCCESS) return Instance().init_status_;
+            int nfds, addr_family = AF_INET;
+            fd_set read_fds, write_fds;
+            struct timeval *tvp, tv;
+            for (;;)
+            {
+                int res;
+                FD_ZERO(&read_fds);
+                FD_ZERO(&write_fds);
+                nfds = ares_fds(Instance().channel_, &read_fds, &write_fds);
+                if (nfds == 0)
+                    break;
+                tvp = ares_timeout(Instance().channel_, NULL, &tv);
+                res = select(nfds, &read_fds, &write_fds, NULL, tvp);
+                if (-1 == res) break;
+                ares_process(Instance().channel_, &read_fds, &write_fds);
+            }
+            return ARES_SUCCESS;
+        }
+
+        ~DNSQueryImpl()
+        {
+            ares_destroy(Instance().channel_);
+            ares_library_cleanup();
+        }
+
+    protected:
+        static DNSQueryImpl& Instance()
+        {
+            static DNSQueryImpl ares;
+            return ares;
+        }
+
+        static void Callback(void* arg, int status, int timeouts, struct hostent* host)
+        {
+            auto task_ptr = reinterpret_cast<QueryTask*>(arg);
+            task_ptr->callback(Result(task_ptr->domain, status, host));
+            delete task_ptr;
+        }
+
+        DNSQueryImpl()
+            : init_status_(ARES_SUCCESS)
+        {
+            struct ares_options options;
+            int optmask = 0;
+            memset(&options, 0, sizeof(options));
+            init_status_ = ares_library_init(ARES_LIB_INIT_ALL);
+            if (init_status_ != ARES_SUCCESS)
+                return;
+            init_status_ = ares_init_options(&channel_, &options, optmask);
+        }
+
+        ares_channel channel_;
+        int init_status_;
+    };
+
+    std::ostream& operator<<(std::ostream& os, const Error& error)
     {
         os << error.Code() << " " << error.Message();
         return os;
@@ -42,20 +115,20 @@ namespace dns
 
     int Error::Code()
     {
-        return const_cast<const Error &>(*this).Code();
+        return const_cast<const Error&>(*this).Code();
     }
 
     std::string_view Error::Message()
     {
-        return const_cast<const Error &>(*this).Message();
+        return const_cast<const Error&>(*this).Message();
     }
 
     Error::operator bool()
     {
-        return const_cast<const Error &>(*this);
+        return const_cast<const Error&>(*this);
     }
 
-    Result::Result(const std::string_view &domain, int code, hostent *hostent_ptr)
+    Result::Result(const std::string_view& domain, int code, hostent* hostent_ptr)
         : name_(domain),
           code_(code),
           hostent_ptr_(hostent_ptr)
@@ -66,7 +139,7 @@ namespace dns
     {
     }
 
-    const std::string_view &Result::Name() const
+    const std::string_view& Result::Name() const
     {
         return name_;
     }
@@ -81,13 +154,13 @@ namespace dns
         return dns::Error(code_);
     }
 
-    Result::Iterator::Iterator(int addr_type, const char *const *addr_list)
+    Result::Iterator::Iterator(int addr_type, const char* const* addr_list)
         : addr_type_(addr_type),
           p_(addr_list)
     {
     }
 
-    Result::Iterator::Iterator(const char *const *addr_list)
+    Result::Iterator::Iterator(const char* const* addr_list)
         : addr_type_(),
           p_(addr_list)
     {
@@ -100,12 +173,12 @@ namespace dns
         return it;
     }
 
-    bool Result::Iterator::operator!=(const Result::Iterator &rhs)
+    bool Result::Iterator::operator!=(const Result::Iterator& rhs)
     {
         return *rhs.p_ != *p_;
     }
 
-    bool Result::Iterator::operator==(const Result::Iterator &rhs)
+    bool Result::Iterator::operator==(const Result::Iterator& rhs)
     {
         return *rhs.p_ == *p_;
     }
@@ -130,19 +203,19 @@ namespace dns
         return End();
     }
 
-    Result::Iterator &Result::Iterator::operator++()
+    Result::Iterator& Result::Iterator::operator++()
     {
         p_++;
         return *this;
     }
 
-    std::string_view &Result::Iterator::operator*()
+    std::string_view& Result::Iterator::operator*()
     {
         UpdatePointer();
         return ptr_;
     }
 
-    std::string_view *Result::Iterator::operator->()
+    std::string_view* Result::Iterator::operator->()
     {
         UpdatePointer();
         return &ptr_;
@@ -157,7 +230,6 @@ namespace dns
     }
 
     DNSQuery::DNSQuery()
-        : domain_list_()
     {
 #ifdef _WIN32
         WORD wVersionRequested;
@@ -174,93 +246,13 @@ namespace dns
 #endif
     }
 
-    void DNSQuery::Add(const std::string_view &domain)
+    void DNSQuery::AsyncResolve(const std::string_view& domain, const Callback& callback)
     {
-        domain_list_.emplace_back(domain);
+        DNSQueryImpl::Add(domain, callback);
     }
 
-    class Ares
+    Error DNSQuery::Run()
     {
-    public:
-        static void Callback(void *arg, int status, int timeouts, struct hostent *host)
-        {
-            const std::string &domain = *reinterpret_cast<std::string *>(arg);
-            Instance().callback_(Result{domain, status, host});
-        }
-
-        static void SetCallback(const DNSQuery::Callback &callback)
-        {
-            Instance().callback_ = callback;
-        }
-
-        static void SetDomainList(std::vector<std::string> &domain_list)
-        {
-            Instance().domain_list_ptr_ = &domain_list;
-        }
-
-        static Error Start()
-        {
-            Instance().index_ = 0;
-            struct ares_options options;
-            int optmask = 0;
-            int status, nfds, addr_family = AF_INET;
-            fd_set read_fds, write_fds;
-            struct timeval *tvp, tv;
-            memset(&options, 0, sizeof(options));
-            status = ares_library_init(ARES_LIB_INIT_ALL);
-            if (status != ARES_SUCCESS)
-                return status;
-            status = ares_init_options(&Instance().channel_, &options, optmask);
-            if (status != ARES_SUCCESS)
-                return status;
-            for (auto &domain : *(Instance().domain_list_ptr_))
-            {
-                ares_gethostbyname(Instance().channel_, domain.c_str(), addr_family, Ares::Callback, &domain);
-            }
-            for (;;)
-            {
-                int res;
-                FD_ZERO(&read_fds);
-                FD_ZERO(&write_fds);
-                nfds = ares_fds(Instance().channel_, &read_fds, &write_fds);
-                if (nfds == 0)
-                    break;
-                tvp = ares_timeout(Instance().channel_, NULL, &tv);
-                res = select(nfds, &read_fds, &write_fds, NULL, tvp);
-                if (-1 == res)
-                    break;
-                ares_process(Instance().channel_, &read_fds, &write_fds);
-            }
-            ares_destroy(Instance().channel_);
-            ares_library_cleanup();
-            return status;
-        }
-        ~Ares() {}
-
-    protected:
-        static Ares &Instance()
-        {
-            static Ares ares;
-            return ares;
-        }
-
-        Ares()
-            : callback_(),
-              domain_list_ptr_(nullptr),
-              index_(0)
-        {
-        }
-
-        DNSQuery::Callback callback_;
-        std::vector<std::string> *domain_list_ptr_;
-        size_t index_;
-        ares_channel channel_;
-    };
-
-    Error DNSQuery::Start(const Callback &callback)
-    {
-        Ares::SetCallback(callback);
-        Ares::SetDomainList(domain_list_);
-        return Ares::Start();
+        return DNSQueryImpl::Run();
     }
-}
+} // namespace dns

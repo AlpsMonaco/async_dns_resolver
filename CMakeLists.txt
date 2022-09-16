@@ -20,8 +20,8 @@ add_library(dns_resolve_library
 )
 
 target_include_directories(dns_resolve_library
-    PUBLIC
-        ${PROJECT_SOURCE_DIR}/include
+    INTERFACE
+        ${PROJECT_SOURCE_DIR}/include/
 )
 
 target_link_libraries(dns_resolve_library

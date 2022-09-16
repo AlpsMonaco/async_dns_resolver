@@ -7,27 +7,21 @@ C++ async dns resolve library.Provide asio-callback-like API.
 #include <iostream>
 #include "dns_query/dns_query.h"
 
-int main(int argc, char** argv)
+int main(int argc,char**argv)
 {
-    dns::DNSQuery query;
-    query.AsyncResolve("www.google.com", [&](const dns::Result& result) -> void
-                       {
-                           if (result.HasError())
-                           {
-                               std::cout << result.Error() << std::endl;
-                           }
-                           else
-                           {
-                               std::cout << result.Name() << std::endl;
-                               for (const auto& v : result)
-                               {
-                                   std::cout << v << std::endl;
-                               }
-                           }
-                       });
-    query.Run(true);
+  dns::Resolver resolver;
+  resolver.AsyncResolve("www.google.com", [&](const dns::Result& result) -> void {
+    if (result.HasError()) {
+      std::cout << result.Error() << std::endl;
+    } else {
+      std::cout << result.Name() << std::endl;
+      for (const auto& v : result) {
+        std::cout << v << std::endl;
+      }
+    }
+  });
+  resolver.Run(true);
 }
-
 ```
 
 ## Introduction
@@ -58,10 +52,3 @@ target_link_libraries(your_project
         dns_query::lib
     )
 ```
-
-
-
-## Notice
-
-* It is currently thread not safe,we recommand you to instantiate `dns::DNSQuery` once and  
-call `dns::DNSQuery::AsyncResolve` in one thread or use mutex to keep sync.  

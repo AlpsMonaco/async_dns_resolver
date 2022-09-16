@@ -1,4 +1,5 @@
 #include "dns_query.h"
+
 #include <ares.h>
 #include <string>
 
@@ -8,261 +9,287 @@
 #include <string.h>
 #endif
 
-namespace dns
+namespace dnsresolve {
+
+struct QueryTask {
+  std::string domain;
+  Resolver::Callback callback;
+
+  QueryTask(const std::string_view& target_domain, const Resolver::Callback& target_callback)
+      : domain(target_domain)
+      , callback(target_callback)
+  {
+  }
+};
+
+std::ostream& operator<<(std::ostream& os, const Error& error)
 {
-    class DNSQueryImpl
-    {
-    public:
-        struct QueryTask
-        {
-            std::string domain;
-            DNSQuery::Callback callback;
-        };
+  os << error.Code() << " " << error.Message();
+  return os;
+}
 
-        static void Add(const std::string_view& domain, const DNSQuery::Callback& callback)
-        {
-            auto query_task_ptr = new QueryTask{std::string(domain), callback};
-            ares_gethostbyname(Instance().channel_, domain.data(), AF_INET, Callback, query_task_ptr);
-        }
+Error::Error(int code)
+    : code_(code)
+{
+}
 
-        static void SetStop()
-        {
-            Instance().is_stop_ = true;
-        }
+Error::~Error()
+{
+}
 
-        static Error Run(bool stop_at_end)
-        {
-            Instance().is_stop_ = stop_at_end;
-            if (Instance().init_status_ != ARES_SUCCESS) return Instance().init_status_;
-            int nfds, addr_family = AF_INET;
-            fd_set read_fds, write_fds;
-            timeval tv{1, 0};
-            for (;;)
-            {
-                int res;
-                FD_ZERO(&read_fds);
-                FD_ZERO(&write_fds);
-                nfds = ares_fds(Instance().channel_, &read_fds, &write_fds);
-                if (nfds == 0 && Instance().is_stop_) break;
-                res = select(nfds, &read_fds, &write_fds, NULL, &tv);
-                if (-1 == res && Instance().is_stop_) break;
-                ares_process(Instance().channel_, &read_fds, &write_fds);
-            }
-            return ARES_SUCCESS;
-        }
+int Error::Code() const
+{
+  return code_;
+}
 
-        ~DNSQueryImpl()
-        {
-            ares_destroy(Instance().channel_);
-            ares_library_cleanup();
-        }
+std::string_view Error::Message() const
+{
+  return ares_strerror(code_);
+}
 
-    protected:
-        static DNSQueryImpl& Instance()
-        {
-            static DNSQueryImpl ares;
-            return ares;
-        }
+Error::operator bool() const
+{
+  return code_ != ARES_SUCCESS;
+}
 
-        static void Callback(void* arg, int status, int timeouts, struct hostent* host)
-        {
-            auto task_ptr = reinterpret_cast<QueryTask*>(arg);
-            task_ptr->callback(Result(task_ptr->domain, status, host));
-            delete task_ptr;
-        }
+int Error::Code()
+{
+  return const_cast<const Error&>(*this).Code();
+}
 
-        DNSQueryImpl()
-            : init_status_(ARES_SUCCESS)
-        {
-            struct ares_options options;
-            int optmask = 0;
-            memset(&options, 0, sizeof(options));
-            init_status_ = ares_library_init(ARES_LIB_INIT_ALL);
-            if (init_status_ != ARES_SUCCESS)
-                return;
-            init_status_ = ares_init_options(&channel_, &options, optmask);
-        }
+std::string_view Error::Message()
+{
+  return const_cast<const Error&>(*this).Message();
+}
 
-        ares_channel channel_;
-        int init_status_;
-        bool is_stop_;
-    };
+Error::operator bool()
+{
+  return const_cast<const Error&>(*this);
+}
 
-    std::ostream& operator<<(std::ostream& os, const Error& error)
-    {
-        os << error.Code() << " " << error.Message();
-        return os;
-    }
+Result::Result(const std::string_view& domain, int code, hostent* hostent_ptr)
+    : name_(domain)
+    , code_(code)
+    , hostent_ptr_(hostent_ptr)
+{
+}
 
-    Error::Error(int code)
-        : code_(code)
-    {
-    }
+Result::~Result()
+{
+}
 
-    Error::~Error()
-    {
-    }
+const std::string_view& Result::Name() const
+{
+  return name_;
+}
 
-    int Error::Code() const
-    {
-        return code_;
-    }
+bool Result::HasError() const
+{
+  return code_ != 0;
+}
 
-    std::string_view Error::Message() const
-    {
-        return ares_strerror(code_);
-    }
+Error Result::Error() const
+{
+  return dnsresolve::Error(code_);
+}
 
-    Error::operator bool() const
-    {
-        return code_ != ARES_SUCCESS;
-    }
+Result::Iterator::Iterator(int addr_type, const char* const* addr_list)
+    : addr_type_(addr_type)
+    , p_(addr_list)
+{
+}
 
-    int Error::Code()
-    {
-        return const_cast<const Error&>(*this).Code();
-    }
+Result::Iterator::Iterator(const char* const* addr_list)
+    : addr_type_()
+    , p_(addr_list)
+{
+}
 
-    std::string_view Error::Message()
-    {
-        return const_cast<const Error&>(*this).Message();
-    }
+Result::Iterator Result::Iterator::operator++(int)
+{
+  Iterator it(addr_type_, p_);
+  p_ += 1;
+  return it;
+}
 
-    Error::operator bool()
-    {
-        return const_cast<const Error&>(*this);
-    }
+bool Result::Iterator::operator!=(const Result::Iterator& rhs)
+{
+  return *rhs.p_ != *p_;
+}
 
-    Result::Result(const std::string_view& domain, int code, hostent* hostent_ptr)
-        : name_(domain),
-          code_(code),
-          hostent_ptr_(hostent_ptr)
-    {
-    }
+bool Result::Iterator::operator==(const Result::Iterator& rhs)
+{
+  return *rhs.p_ == *p_;
+}
 
-    Result::~Result()
-    {
-    }
+Result::Iterator Result::Begin() const
+{
+  return Iterator{hostent_ptr_->h_addrtype, hostent_ptr_->h_addr_list};
+}
 
-    const std::string_view& Result::Name() const
-    {
-        return name_;
-    }
+Result::Iterator Result::End() const
+{
+  return iterator_end;
+}
 
-    bool Result::HasError() const
-    {
-        return code_ != 0;
-    }
+Result::Iterator Result::begin() const
+{
+  return Begin();
+}
 
-    Error Result::Error() const
-    {
-        return dns::Error(code_);
-    }
+Result::Iterator Result::end() const
+{
+  return End();
+}
 
-    Result::Iterator::Iterator(int addr_type, const char* const* addr_list)
-        : addr_type_(addr_type),
-          p_(addr_list)
-    {
-    }
+Result::Iterator& Result::Iterator::operator++()
+{
+  p_++;
+  return *this;
+}
 
-    Result::Iterator::Iterator(const char* const* addr_list)
-        : addr_type_(),
-          p_(addr_list)
-    {
-    }
+std::string_view& Result::Iterator::operator*()
+{
+  UpdatePointer();
+  return ptr_;
+}
 
-    Result::Iterator Result::Iterator::operator++(int)
-    {
-        Iterator it(addr_type_, p_);
-        p_ += 1;
-        return it;
-    }
+std::string_view* Result::Iterator::operator->()
+{
+  UpdatePointer();
+  return &ptr_;
+}
 
-    bool Result::Iterator::operator!=(const Result::Iterator& rhs)
-    {
-        return *rhs.p_ != *p_;
-    }
+void Result::Iterator::UpdatePointer()
+{
+  buf_[0] = '?';
+  buf_[1] = '0';
+  ares_inet_ntop(addr_type_, *p_, buf_, sizeof(buf_));
+  ptr_ = buf_;
+}
 
-    bool Result::Iterator::operator==(const Result::Iterator& rhs)
-    {
-        return *rhs.p_ == *p_;
-    }
+class AresMgr {
+public:
+  static int Init()
+  {
+    static AresMgr mgr;
+    return mgr.status_;
+  }
 
-    Result::Iterator Result::Begin() const
-    {
-        return Iterator{hostent_ptr_->h_addrtype, hostent_ptr_->h_addr_list};
-    }
+  static void Callback(void* arg, int status, int timeouts, hostent* hostent_ptr)
+  {
+    auto query_task_ptr = reinterpret_cast<QueryTask*>(arg);
+    query_task_ptr->callback(Result(query_task_ptr->domain, status, hostent_ptr));
+    delete query_task_ptr;
+  }
 
-    Result::Iterator Result::End() const
-    {
-        return iterator_end;
-    }
+protected:
+  int status_;
 
-    Result::Iterator Result::begin() const
-    {
-        return Begin();
-    }
+  AresMgr()
+  {
+    status_ = ares_library_init(ARES_LIB_INIT_ALL);
+  }
 
-    Result::Iterator Result::end() const
-    {
-        return End();
-    }
+  ~AresMgr()
+  {
+    if (status_ == ARES_SUCCESS)
+      ares_library_cleanup();
+  }
+};
 
-    Result::Iterator& Result::Iterator::operator++()
-    {
-        p_++;
-        return *this;
-    }
-
-    std::string_view& Result::Iterator::operator*()
-    {
-        UpdatePointer();
-        return ptr_;
-    }
-
-    std::string_view* Result::Iterator::operator->()
-    {
-        UpdatePointer();
-        return &ptr_;
-    }
-
-    void Result::Iterator::UpdatePointer()
-    {
-        buf_[0] = '?';
-        buf_[1] = '0';
-        ares_inet_ntop(addr_type_, *p_, buf_, sizeof(buf_));
-        ptr_ = buf_;
-    }
-
-    DNSQuery::DNSQuery()
-    {
+class Resolver::Impl {
+public:
+  Impl()
+      : channel_()
+      , status_(0)
+  {
 #ifdef _WIN32
-        WORD wVersionRequested;
-        WSADATA wsaData;
-        wVersionRequested = MAKEWORD(2, 2);
-        WSAStartup(wVersionRequested, &wsaData);
+    WORD wVersionRequested;
+    WSADATA wsaData;
+    wVersionRequested = MAKEWORD(2, 2);
+    WSAStartup(wVersionRequested, &wsaData);
 #endif
-    }
+    status_ = AresMgr::Init();
+    if (status_ != ARES_SUCCESS)
+      return;
+    struct ares_options options;
+    int optmask = 0;
+    memset(&options, 0, sizeof(options));
+    status_ = ares_init_options(&channel_, &options, optmask);
+    if (status_ != ARES_SUCCESS)
+      return;
+  }
 
-    DNSQuery::~DNSQuery()
-    {
+  ~Impl()
+  {
 #ifdef _WIN32
-        WSACleanup();
+    WSACleanup();
 #endif
-    }
+  }
 
-    void DNSQuery::AsyncResolve(const std::string_view& domain, const Callback& callback)
-    {
-        DNSQueryImpl::Add(domain, callback);
-    }
+  void AsyncResolve(const std::string_view& domain, const Callback& callback)
+  {
+    QueryTask* query_task_ptr = new QueryTask{domain, callback};
+    ares_gethostbyname(channel_, domain.data(), AF_INET, AresMgr::Callback, query_task_ptr);
+  }
 
-    Error DNSQuery::Run(bool stop_at_end)
-    {
-        return DNSQueryImpl::Run(stop_at_end);
+  Error Run(bool stop_at_end)
+  {
+    is_stop_ = stop_at_end;
+    if (status_ != ARES_SUCCESS)
+      return status_;
+    int nfds, addr_family = AF_INET;
+    fd_set read_fds, write_fds;
+    timeval tv{1, 0};
+    for (;;) {
+      int res;
+      FD_ZERO(&read_fds);
+      FD_ZERO(&write_fds);
+      nfds = ares_fds(channel_, &read_fds, &write_fds);
+      if (nfds == 0 && is_stop_)
+        break;
+      res = select(nfds, &read_fds, &write_fds, NULL, &tv);
+      if (-1 == res && is_stop_)
+        break;
+      ares_process(channel_, &read_fds, &write_fds);
     }
+    return ARES_SUCCESS;
+  }
 
-    void DNSQuery::Stop()
-    {
-        DNSQueryImpl::SetStop();
-    }
+  void SetStop()
+  {
+    is_stop_ = true;
+  }
+
+protected:
+  ares_channel channel_;
+  int status_;
+  bool is_stop_;
+};
+
+Resolver::Resolver()
+{
+  pimpl_ = std::make_unique<Impl>();
+}
+
+Resolver::~Resolver()
+{
+}
+
+void Resolver::AsyncResolve(const std::string_view& domain, const Callback& callback)
+{
+  pimpl_->AsyncResolve(domain, callback);
+}
+
+Error Resolver::Run(bool stop_at_end)
+{
+  return pimpl_->Run(stop_at_end);
+}
+
+void Resolver::Stop()
+{
+  pimpl_->SetStop();
+}
+
 } // namespace dns

@@ -82,6 +82,8 @@
         "xtree": "cpp",
         "xutility": "cpp",
         "ares_setup.h": "c",
-        "*.rh": "cpp"
+        "*.rh": "cpp",
+        "condition_variable": "cpp",
+        "mutex": "cpp"
     }
 }

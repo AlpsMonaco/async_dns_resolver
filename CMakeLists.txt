@@ -27,23 +27,4 @@ target_link_libraries(dns_query_library
 
 add_library(dns_query::lib ALIAS dns_query_library)
 
-add_executable(dns_query_test
-    ${PROJECT_SOURCE_DIR}/tests/test_dns_query.cpp
-)
-
-target_include_directories(dns_query_test
-    PRIVATE
-        ${PROJECT_SOURCE_DIR}/include
-)
-
-if(UNIX)
-    target_link_libraries(dns_query_test
-        PRIVATE
-            pthread
-    )
-endif()
-
-target_link_libraries(dns_query_test
-    PRIVATE
-        dns_query_library
-)
+add_subdirectory(${PROJECT_SOURCE_DIR}/tests)

@@ -11,11 +11,15 @@
 #endif
 
 #include <iostream>
+#include <mutex>
 #include <thread>
 #include <vector>
 
+std::mutex mu;
+size_t i = 0;
 static void callback(void* arg, int status, int timeouts, struct hostent* host)
 {
+  std::lock_guard<std::mutex> lg(mu);
   char** p;
   if (status != ARES_SUCCESS) {
     fprintf(stderr, "%s: %s\n", (char*)arg, ares_strerror(status));
@@ -24,34 +28,46 @@ static void callback(void* arg, int status, int timeouts, struct hostent* host)
   for (p = host->h_addr_list; *p; p++) {
     char addr_buf[46] = "??";
     ares_inet_ntop(host->h_addrtype, *p, addr_buf, sizeof(addr_buf));
-    printf("%-32s\t%s", host->h_name, addr_buf);
+    printf("%d %-32s\t%s", i++, host->h_name, addr_buf);
     puts("");
   }
 }
 
-struct GlobalAresMgr {
+class AresMgr {
+public:
   static int Init()
   {
-    GlobalAresMgr mgr;
+    static AresMgr mgr;
     return mgr.status_;
   }
 
-private:
+protected:
   int status_;
-  GlobalAresMgr()
+
+  AresMgr()
   {
+#ifdef _WIN32
+    WORD wVersionRequested;
+    WSADATA wsaData;
+    wVersionRequested = MAKEWORD(2, 2);
+    WSAStartup(wVersionRequested, &wsaData);
+#endif
     status_ = ares_library_init(ARES_LIB_INIT_ALL);
   }
 
-  ~GlobalAresMgr()
+  ~AresMgr()
   {
-    ares_library_cleanup();
+    if (status_ == ARES_SUCCESS)
+      ares_library_cleanup();
+#ifdef _WIN32
+    WSACleanup();
+#endif
   }
 };
 
 int CreateCAresTask()
 {
-  int status = GlobalAresMgr::Init();
+  int status = AresMgr::Init();
   if (status != ARES_SUCCESS) {
     std::cout << ares_strerror(status) << std::endl;
     return 1;

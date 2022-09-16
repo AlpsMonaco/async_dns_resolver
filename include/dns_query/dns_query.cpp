@@ -36,7 +36,7 @@ namespace dns
             if (Instance().init_status_ != ARES_SUCCESS) return Instance().init_status_;
             int nfds, addr_family = AF_INET;
             fd_set read_fds, write_fds;
-            struct timeval *tvp, tv;
+            timeval tv{1, 0};
             for (;;)
             {
                 int res;
@@ -44,8 +44,7 @@ namespace dns
                 FD_ZERO(&write_fds);
                 nfds = ares_fds(Instance().channel_, &read_fds, &write_fds);
                 if (nfds == 0 && Instance().is_stop_) break;
-                tvp = ares_timeout(Instance().channel_, NULL, &tv);
-                res = select(nfds, &read_fds, &write_fds, NULL, tvp);
+                res = select(nfds, &read_fds, &write_fds, NULL, &tv);
                 if (-1 == res && Instance().is_stop_) break;
                 ares_process(Instance().channel_, &read_fds, &write_fds);
             }

@@ -9,7 +9,7 @@ set (CMAKE_CXX_STANDARD 17)
 set(CARES_SHARED OFF)
 set(CARES_STATIC ON)
 
-if(NOT EXISTS "third_party/c-ares")
+if(NOT EXISTS "${PROJECT_SOURCE_DIR}/third_party/c-ares/CMakeLists.txt")
     message(FATAL_ERROR  "third_party/c-ares not exist\nplease run \"git submodule update --init\"")
 endif()
 

@@ -1,4 +1,4 @@
-#include "dns_query.h"
+#include "dns_resolve.h"
 
 #include <ares.h>
 #include <string>

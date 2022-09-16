@@ -16,7 +16,7 @@ endif()
 
 target_link_libraries(test_dns_qury
     PRIVATE
-        dns_query_library
+        dns_resolve_library
 )
 
 add_executable(test_cares_features

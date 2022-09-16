@@ -1,5 +1,5 @@
 # async_dns_resolver
-async_dns_resolver is c++ async dns resolve library which provides simple API and designs for  
+async_dns_resolver is c++ cross-platform async dns resolve library which provides simple API and designs for  
 high performace and high concurrency scene.Also runtime and thread safe.
 
 ## Quick Start
@@ -12,11 +12,11 @@ int main(int argc,char**argv)
   dnsresolve::Resolver resolver;
   resolver.AsyncResolve("www.google.com", [&](const dnsresolve::Result& result) -> void {
     if (result.HasError()) {
-      Println(result.Error());
+      std::cout <<result.Error() << std::endl;
     } else {
-      Println(result.Name());
+      std::cout <<result.Name() << std::endl;
       for (const auto& v : result) {
-        Println(v);
+        std::cout << v << std::endl;
       }
     }
   });
@@ -24,31 +24,31 @@ int main(int argc,char**argv)
 }
 ```
 
-## Introduction
-* High performance based on c-ares,a C language dns async resolve library.
-* Provide C++ style and simple API,also runtime safe.
+## Include
 
+## CMake
 
-## Usage
+It is recommend to use CMake to include this library.
 
-1. Init submodule,run  
-   ```bash
-   git submodule update --init
-   ```
-2. Use CMake to build library.
-3. Include to your project.
-for CMake user,use
+1. Initialize git submodule,run  
+```bash
+git submodule update --init
+```
+
+2. (Optional) Use Cmake to build this library. 
+```bash
+mkdir -p build && cd build && cmake .. && make
+```
+
+for windows user,use `Visual Studio` to compile static library.
+
+3. Include to your CMakeLists.txt
 ```cmake
-add_subdirectory(/path/to/dns_query)
-
-target_include_directories(your_project
-    PRIVATE
-        /path/to/dns_query/include
-)
+add_subdirectory(/path/to/async_dns_resolver)
 
 target_link_libraries(your_project
     PRIVATE
         ...
-        dns_query::lib
+        dns_resolve::lib
     )
 ```

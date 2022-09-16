@@ -75,15 +75,15 @@ void SimpleTest()
   dnsresolve::Resolver resolver;
   resolver.AsyncResolve("www.google.com", [&](const dnsresolve::Result& result) -> void {
     if (result.HasError()) {
-      Println(result.Error());
+      std::cout << result.Error() << std::endl;
     } else {
-      Println(result.Name());
+      std::cout << result.Name() << std::endl;
       for (const auto& v : result) {
-        Println(v);
+        std::cout << v << std::endl;
       }
     }
   });
-  resolver.Run(true);
+  resolver.Run();
 }
 
 int main(int argc, char** argv)

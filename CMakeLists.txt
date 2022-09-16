@@ -15,16 +15,20 @@ endif()
 
 add_subdirectory(third_party/c-ares)
 
-add_library(dns_query_library
-    ${PROJECT_SOURCE_DIR}/include/dns_resolve/dns_resolve.h
+add_library(dns_resolve_library
     ${PROJECT_SOURCE_DIR}/include/dns_resolve/dns_resolve.cpp
 )
 
-target_link_libraries(dns_query_library
+target_include_directories(dns_resolve_library
+    PUBLIC
+        ${PROJECT_SOURCE_DIR}/include
+)
+
+target_link_libraries(dns_resolve_library
     PRIVATE
         c-ares::cares
 )
 
-add_library(dns_resolve::lib ALIAS dns_query_library)
+add_library(dns_resolve::lib ALIAS dns_resolve_library)
 
 add_subdirectory(${PROJECT_SOURCE_DIR}/tests)

@@ -1,4 +1,4 @@
-#include "dns_query/dns_query.h"
+#include "dns_resolve/dns_resolve.h"
 #include <iostream>
 #include <sstream>
 #include <thread>

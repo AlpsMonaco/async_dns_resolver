@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.1)
 
-project(dns_query)
+project(dns_resolve)
 
 set(CMAKE_POLICY_DEFAULT_CMP0077 NEW)
 
@@ -16,8 +16,8 @@ endif()
 add_subdirectory(third_party/c-ares)
 
 add_library(dns_query_library
-    ${PROJECT_SOURCE_DIR}/include/dns_query/dns_query.h
-    ${PROJECT_SOURCE_DIR}/include/dns_query/dns_query.cpp
+    ${PROJECT_SOURCE_DIR}/include/dns_resolve/dns_resolve.h
+    ${PROJECT_SOURCE_DIR}/include/dns_resolve/dns_resolve.cpp
 )
 
 target_link_libraries(dns_query_library
@@ -25,6 +25,6 @@ target_link_libraries(dns_query_library
         c-ares::cares
 )
 
-add_library(dns_query::lib ALIAS dns_query_library)
+add_library(dns_resolve::lib ALIAS dns_query_library)
 
 add_subdirectory(${PROJECT_SOURCE_DIR}/tests)

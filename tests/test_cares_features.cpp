@@ -1,11 +1,16 @@
 #include <ares.h>
+#include <string.h>
+
+#ifdef _WIN32
+#include <WinSock2.h>
+#else
 #include <arpa/inet.h>
-#include <iostream>
 #include <netdb.h>
 #include <netinet/in.h>
-#include <string.h>
 #include <sys/select.h>
+#endif
 
+#include <iostream>
 #include <thread>
 #include <vector>
 
@@ -63,7 +68,7 @@ int CreateCAresTask()
   const char* domain = "www.baidu.com";
   for (size_t i = 0; i < 100; i++)
     ares_gethostbyname(channel, domain, AF_INET, callback, (void*)domain);
-  timeval tm { 1, 0 };
+  timeval tm{1, 0};
   fd_set read_fds;
   fd_set write_fds;
   int nfds;

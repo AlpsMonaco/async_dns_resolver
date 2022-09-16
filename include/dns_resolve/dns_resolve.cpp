@@ -188,6 +188,12 @@ protected:
 
   AresMgr()
   {
+#ifdef _WIN32
+    WORD wVersionRequested;
+    WSADATA wsaData;
+    wVersionRequested = MAKEWORD(2, 2);
+    WSAStartup(wVersionRequested, &wsaData);
+#endif
     status_ = ares_library_init(ARES_LIB_INIT_ALL);
   }
 
@@ -195,6 +201,9 @@ protected:
   {
     if (status_ == ARES_SUCCESS)
       ares_library_cleanup();
+#ifdef _WIN32
+    WSACleanup();
+#endif
   }
 };
 
@@ -204,12 +213,6 @@ public:
       : channel_()
       , status_(0)
   {
-#ifdef _WIN32
-    WORD wVersionRequested;
-    WSADATA wsaData;
-    wVersionRequested = MAKEWORD(2, 2);
-    WSAStartup(wVersionRequested, &wsaData);
-#endif
     status_ = AresMgr::Init();
     if (status_ != ARES_SUCCESS)
       return;
@@ -223,9 +226,6 @@ public:
 
   ~Impl()
   {
-#ifdef _WIN32
-    WSACleanup();
-#endif
   }
 
   void AsyncResolve(const std::string_view& domain, const Callback& callback)

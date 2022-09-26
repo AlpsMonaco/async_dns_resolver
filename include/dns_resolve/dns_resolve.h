@@ -34,7 +34,7 @@ protected:
 
 class Result {
 public:
-  Result(const std::string_view& domain, int code, hostent* hostent_ptr);
+  Result(std::string_view domain, int code, hostent* hostent_ptr);
   ~Result();
 
   struct Iterator {
@@ -58,7 +58,7 @@ public:
   };
 
   static constexpr char* const* iterator_end = Iterator::end;
-  const std::string_view& Name() const;
+  std::string_view Name() const;
   bool HasError() const;
   Error Error() const;
   Iterator Begin() const;
@@ -79,7 +79,7 @@ public:
   Resolver();
   ~Resolver();
 
-  void AsyncResolve(const std::string_view& domain, const Callback& callback);
+  void AsyncResolve(std::string_view domain, const Callback& callback);
   Error Run(bool stop_at_end = true);
   void Stop();
 

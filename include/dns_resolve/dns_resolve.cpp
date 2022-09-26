@@ -15,7 +15,7 @@ struct QueryTask {
   std::string domain;
   Resolver::Callback callback;
 
-  QueryTask(const std::string_view& target_domain, const Resolver::Callback& target_callback)
+  QueryTask(std::string_view target_domain, const Resolver::Callback& target_callback)
       : domain(target_domain)
       , callback(target_callback)
   {
@@ -67,7 +67,7 @@ Error::operator bool()
   return const_cast<const Error&>(*this);
 }
 
-Result::Result(const std::string_view& domain, int code, hostent* hostent_ptr)
+Result::Result(std::string_view domain, int code, hostent* hostent_ptr)
     : name_(domain)
     , code_(code)
     , hostent_ptr_(hostent_ptr)
@@ -78,7 +78,7 @@ Result::~Result()
 {
 }
 
-const std::string_view& Result::Name() const
+std::string_view Result::Name() const
 {
   return name_;
 }
@@ -228,7 +228,7 @@ public:
   {
   }
 
-  void AsyncResolve(const std::string_view& domain, const Callback& callback)
+  void AsyncResolve(std::string_view domain, const Callback& callback)
   {
     QueryTask* query_task_ptr = new QueryTask{domain, callback};
     ares_gethostbyname(channel_, domain.data(), AF_INET, AresMgr::Callback, query_task_ptr);
@@ -277,7 +277,7 @@ Resolver::~Resolver()
 {
 }
 
-void Resolver::AsyncResolve(const std::string_view& domain, const Callback& callback)
+void Resolver::AsyncResolve(std::string_view domain, const Callback& callback)
 {
   pimpl_->AsyncResolve(domain, callback);
 }
